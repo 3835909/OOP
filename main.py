@@ -3,6 +3,7 @@ all_teachers = []
 all_curator = []
 all_lessons = []
 
+
 class Human:
     def __init__(self, name: str, surname: str, email: str, age: int, tel: str):
         self.name = name
@@ -42,8 +43,10 @@ class Student(Human):
         self.knowledge.append(lesson)
         return True
 
+
 class Employee(Human):
-    def __init__(self, name: str, surname: str, email: str, age: int, tel: str, lich_dan: str, dolznost: str, stag: int, stavka: int, vid_dogovora: str):
+    def __init__(self, name: str, surname: str, email: str, age: int, tel: str, lich_dan: str, dolznost: str, stag: int,
+                 stavka: int, vid_dogovora: str):
         super().__init__(name, surname, email, age, tel)
         self.lich_dan = lich_dan
         self.dolznost = dolznost
@@ -53,7 +56,8 @@ class Employee(Human):
 
 
 class Teacher(Employee):
-    def __init__(self, name: str, surname: str, email: str, age: int, tel: str, lich_dan: str, dolznost: str, stag: int, stavka: int, vid_dogovora: str):
+    def __init__(self, name: str, surname: str, email: str, age: int, tel: str, lich_dan: str, dolznost: str, stag: int,
+                 stavka: int, vid_dogovora: str):
         super().__init__(name, surname, email, age, tel, lich_dan, dolznost, stag, stavka, vid_dogovora)
         all_teachers.append(self)
 
@@ -77,11 +81,13 @@ class Teacher(Employee):
                 student_names.append(student.name)
             print(f'Преподаватель {self.surname} {self.name} провёл занятие \'{lesson.lesson_name}\'\n '
                   f'Для студентов: \n {student_names}')
+        return True
+
 
 class Curator(Employee):
-    def __init__(self):
-        super().__init__()
-
+    def __init__(self, name: str, surname: str, email: str, age: int, tel: str, lich_dan: str, dolznost: str, stag: int,
+                 stavka: int, vid_dogovora: str):
+        super().__init__(name, surname, email, age, tel, lich_dan, dolznost, stag, stavka, vid_dogovora)
 
 
 class Lesson:
@@ -103,8 +109,10 @@ class Lesson:
         return self.teachers
 
 
-Teacher_Vladislav = Teacher('Владислав', 'Духовских', 'prizrak@mail.ru', 30, '+79220000000', 'Крутой чувак', 'Супер БОСС', 10, 3, 'Пожизненный')
-Teacher_Alexey = Teacher('Алексей', 'Гуров', 'gurov@mail.ru', 28, '+79220101010', 'Тоже крутой чувак', 'подработка', 3, 1, 'сверхурочный')
+Teacher_Vladislav = Teacher('Владислав', 'Духовских', 'prizrak@mail.ru', 30, '+79220000000', 'Крутой чувак',
+                            'Супер БОСС', 10, 3, 'Пожизненный')
+Teacher_Alexey = Teacher('Алексей', 'Гуров', 'gurov@mail.ru', 28, '+79220101010', 'Тоже крутой чувак', 'подработка', 3,
+                         1, 'сверхурочный')
 
 Stud_Vitya = Student('Витя', 'Витевских', 'vitya@mail.ru', 18, '+79220202020')
 Stud_Dima = Student('Дима', 'Дмитриевских', 'dima@mail.ru', 77, '+79221212120')
