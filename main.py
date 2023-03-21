@@ -81,7 +81,9 @@ class Teacher(Employee):
                 student_names.append(student.name)
             print(f'Преподаватель {self.surname} {self.name} провёл занятие \'{lesson.lesson_name}\'\n '
                   f'Для студентов: \n {student_names}')
-        return True
+            return True
+        else:
+            return False
 
 
 class Curator(Employee):
